@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regimenes Fiscales</title>
+    <!-- Vincula el archivo CSS para los estilos de la página -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Título de la página -->
+        <h2>Regimenes Fiscales</h2>
+        <!-- Logo de la página -->
+        <img src="logo.jpg" alt="Logo" class="logo">
+
+        <!-- Campo de búsqueda -->
+        <input type="text" id="search" placeholder="Buscar...">
+        <button class="search-btn" onclick="filterList()">Buscar</button>
+
+        <!-- Contenedor de la tabla, inicialmente oculto -->
+        <div class="table-container" id="tableContainer" style="display: none;">
+            <table id="productTable">
+                <thead>
+                    <!-- Encabezados de la tabla -->
+                    <tr>
+                        <th>c_RegimenFiscal</th>
+                        <th>Descripción</th>
+                        <th>Física</th>
+                        <th>Moral</th>
+                        <th>Fecha de inicio de vigencia</th>
+                        <th>Fecha de fin de vigencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ejemplo de una fila con datos -->
+                    <tr>
+                        <td>601</td>
+                        <td>General de Ley Personas Morales</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>603</td>
+                        <td>Personas Morales con Fines no Lucrativos</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>605</td>
+                        <td>Sueldos y Salarios e Ingresos Asimilados a Salarios</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>606</td>
+                        <td>Arrendamiento</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>607</td>
+                        <td>Régimen de Enajenación o Adquisición de Bienes</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>608</td>
+                        <td>Demás ingresos</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>610</td>
+                        <td>Residentes en el Extranjero sin Establecimiento Permanente en México</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>611</td>
+                        <td>Ingresos por Dividendos (socios y accionistas)</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>612</td>
+                        <td>Personas Físicas con Actividades Empresariales y Profesionales</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>614</td>
+                        <td>Ingresos por intereses</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>615</td>
+                        <td>Régimen de los ingresos por obtención de premios</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>616</td>
+                        <td>Sin obligaciones fiscales</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>620</td>
+                        <td>Sociedades Cooperativas de Producción que optan por diferir sus ingresos</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>621</td>
+                        <td>Incorporación Fiscal</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>622</td>
+                        <td>Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>623</td>
+                        <td>Opcional para Grupos de Sociedades</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>624</td>
+                        <td>Coordinados</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>625</td>
+                        <td>Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>626</td>
+                        <td>Régimen Simplificado de Confianza</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
+                        <td>01/01/2022</td>
+                        <td></td>
+                    </tr>
+                    <!-- Aquí puedes agregar más filas de datos según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pie de página con información legal -->
+        <footer>
+            <p class="nota-legal">El catálogo mostrado es para facturación 4.0.</p>
+        </footer>
+    </div>
+
+    <!-- Vincula el archivo JavaScript para la funcionalidad de búsqueda -->
+    <script src="script-listado.js"></script>
+
+</body>
+
+</html>

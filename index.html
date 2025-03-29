@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web App Contable</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Aquí puedes enlazar el archivo CSS externo -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Agregar Font Awesome para los íconos -->
+</head>
+
+<body class="dark-mode"> <!-- Inicia con el modo oscuro -->
+
+  <!-- Contenedor para las pestañas en el lado izquierdo -->
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Menú</h2>
+      <img src="logo.jpg" alt="logo">
+    </div>
+    <ul class="sidebar-menu">
+      <li><button class="tab" aria-label="Calculadora" onclick="showTab('simulacion', event)"><i
+            class="fas fa-calculator"></i> Calculadora</button></li>
+      <li><button class="tab" aria-label="Buscador de actividades" onclick="showTab('resico', event)"><i
+            class="fas fa-search"></i> Buscador de actividades</button></li>
+      <li><button class="tab" aria-label="Catálogo de productos" onclick="showTab('catalogo', event)"><i
+            class="fas fa-box"></i> Catálogo de productos</button></li>
+      <li><button class="tab" aria-label="Usos CFDI" onclick="showTab('Usos CFDI', event)"><i
+            class="fas fa-file-invoice"></i> Usos CFDI</button></li>
+      <li><button class="tab" aria-label="Formas de pago" onclick="showTab('catalogo de formas de pago', event)"><i
+            class="fas fa-credit-card"></i> Formas de pago</button></li>
+      <li><button class="tab" aria-label="Regímenes fiscales" onclick="showTab('regimenes fiscales', event)"><i
+            class="fas fa-landmark"></i> Regímenes fiscales</button></li>
+      <li><button class="tab" aria-label="Perdida Fiscal" onclick="showTab('Perdida Fiscal', event)"><i
+            class="fas fa-exclamation-triangle"></i> Perdida Fiscal</button></li>
+      <li><button class="tab" aria-label="Deducciones personales" onclick="showTab('Deducciones personales', event)"><i
+            class="fas fa-hand-holding-usd"></i> Deducciones personales</button></li>
+      <li><button class="tab" aria-label="Calculo Anual" onclick="showTab('Calculo Anual', event)"><i
+            class="fas fa-calculator"></i> Calculo Anual</button></li>
+    </ul>
+    <button id="darkModeToggle" aria-label="Alternar entre modo claro y oscuro" onclick="toggleDarkMode()"
+      class="dark-mode-toggle">
+      <i id="darkModeIcon" class="fas fa-moon"></i> Modo Oscuro
+    </button>
+  </div>
+
+  <!-- Contenedor del contenido, que se ajusta al lado derecho -->
+  <div class="content-container">
+    <!-- Contenido de la Calculadora -->
+    <div id="simulacion" class="content">
+      <iframe src="Simulacin para comparar regimenes/calculadora.html" title="Calculadora para comparar regimenes"
+        style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido del Buscador de actividades -->
+    <div id="resico" class="content">
+      <iframe src="buscador de actividades/buscador-actividades.html" title="Buscador de actividades"
+        style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido del Catálogo de productos y servicios -->
+    <div id="catalogo" class="content">
+      <iframe src="catalogo/catalogo.html" title="Catálogo de productos y servicios" style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido del Catálogo de Usos de CFDI -->
+    <div id="Usos CFDI" class="content">
+      <iframe src="usos de cfdi/index.html" title="Usos de CFDI" style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido del Catálogo de formas de pago -->
+    <div id="catalogo de formas de pago" class="content">
+      <iframe src="Formas de pago/index.html" title="Catálogo de formas de pago" style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido del Catálogo de Regímenes fiscales -->
+    <div id="regimenes fiscales" class="content">
+      <iframe src="Regimenes fiscales/index.html" title="Regímenes fiscales" style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido para actualizar perdidas fiscales -->
+    <div id="Perdida Fiscal" class="content">
+      <iframe src="Actualizacion de perdida fiscal/index.html" title="Perdida Fiscal" style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido de Deducciones personales-->
+    <div id="Deducciones personales" class="content">
+      <iframe src="Deducciones personales" title="Deducciones personales" style="border:none;"></iframe>
+    </div>
+
+    <!-- Contenido Calculo anual-->
+    <div id="Calculo Anual" class="content">
+      <iframe src="Deducciones personales" title="Calculo Anual" style="border:none;"></iframe>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Aquí puedes enlazar tu archivo JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>

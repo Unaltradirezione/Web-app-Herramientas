@@ -1,0 +1,162 @@
+/* ========================= */
+/* Estilos generales */
+/* ========================= */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #ffffff; /* Fondo gris */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* ========================= */
+  /* Contenedor principal */
+  /* ========================= */
+  .container {
+    max-width: 1600px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+  }
+  
+  .container:hover {
+    transform: scale(1.02); /* Efecto al pasar el mouse sobre el contenedor */
+  }
+  
+  /* ========================= */
+  /* Título principal */
+  /* ========================= */
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* ========================= */
+  /* Estilos para imágenes */
+  /* ========================= */
+  img {
+    width: 120px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  /* ========================= */
+  /* Estilos para input de búsqueda y botón */
+  /* ========================= */
+  input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  .search-btn {
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #007bff, #00c975);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  
+  .search-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #008a5c);
+    transform: scale(1.05); /* Efecto al pasar el mouse sobre el botón */
+  }
+  
+  /* ========================= */
+  /* Estilos para la tabla */
+  /* ========================= */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 2px solid #00c975; /* Bordes visibles */
+  }
+  
+  th {
+    background-color: #00c975;
+    color: white;
+    padding: 12px;
+    border: 2px solid #00c975;
+    text-align: center;
+  }
+  
+  td {
+    padding: 10px;
+    border: 2px solid #ccc;
+    text-align: center;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alterna colores en las filas */
+  }
+  
+  tr:hover {
+    background-color: #ddd; /* Resalta la fila actual al pasar el mouse */
+  }
+  
+  /* ========================= */
+  /* Contenedor de la tabla */
+  /* ========================= */
+  .table-container {
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  /* ========================= */
+  /* Botón para agregar filas */
+  /* ========================= */
+  button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* ========================= */
+  /* Responsividad */
+  /* ========================= */
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+      padding: 20px;
+    }
+    
+    table {
+      font-size: 14px;
+    }
+    
+    th, td {
+      padding: 8px;
+    }
+  }
+  

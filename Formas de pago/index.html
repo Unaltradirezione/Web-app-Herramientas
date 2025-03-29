@@ -1,0 +1,355 @@
+<!-- Declaración del tipo de documento y el idioma -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración del conjunto de caracteres y escala de la vista -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Pago</title>
+    <!-- Enlace al archivo de estilos CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container"><!-- Contenedor principal de la página -->
+
+        <!-- Sección del título y el logo -->
+        <div class="header">
+            <h2>Formas de Pago</h2><!-- Título principal -->
+            <img src="logo.jpg" alt="Logo"><!-- Imagen del logo -->
+        </div>
+
+        <!-- Sección de búsqueda -->
+        <div class="search-section">
+            <input type="text" id="search" placeholder="Buscar...">
+            <button class="search-btn" onclick="filterList()">Buscar</button>
+        </div>
+
+        <!-- Contenedor de la tabla -->
+        <div class="table-container" id="tableContainer">
+            <table id="paymentTable">
+                <thead>
+                    <!-- Encabezados de la tabla -->
+                    <tr>
+                        <th>c_FormaPago</th>
+                        <th>Descripción</th>
+                        <th>Bancarizado</th>
+                        <th>Número de operación</th>
+                        <th>RFC del Emisor de la cuenta ordenante</th>
+                        <th>Cuenta Ordenante</th>
+                        <th>Patrón para cuenta ordenante</th>
+                        <th>RFC del Emisor Cuenta de Beneficiario</th>
+                        <th>Cuenta de Beneficiario</th>
+                        <th>Patrón para cuenta Beneficiaria</th>
+                        <th>Tipo Cadena Pago</th>
+                        <th>Nombre del Banco Emisor (Extranjero)</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Primera fila de datos -->                   
+                    <tr>
+                        <td>01</td>
+                        <td>Efectivo</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Cheque nominativo</td>
+                        <td>Sí</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{11}|[0-9]{18}</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}</td>
+                        <td>No</td>
+                        <td>Si el RFC del emisor de la cuenta ordenante es XEXX010101000, este campo es obligatorio.</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Transferencia electrónica de fondos</td>
+                        <td>Sí</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10}|[0-9]{16}|[0-9]{18}</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10}|[0-9]{18}</td>
+                        <td>Opcional</td>
+                        <td>Si el RFC del emisor de la cuenta ordenante es XEXX010101000, este campo es obligatorio.</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Tarjeta de crédito</td>
+                        <td>Sí</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{16}</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}</td>
+                        <td>No</td>
+                        <td>Si el RFC del emisor de la cuenta ordenante es XEXX010101000, este campo es obligatorio.</td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>Monedero electrónico</td>
+                        <td>Sí</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>Dinero electrónico</td>
+                        <td>Sí</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10}</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>Vales de despensa</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Dación en pago</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Pago por subrogación</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Pago por consignación</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Condonación</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Compensación</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Novación</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Confusión</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Remisión de deuda</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>Prescripción o caducidad</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>A satisfacción del acreedor</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>Tarjeta de débito</td>
+                        <td>Sí</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{16}</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}</td>
+                        <td>No</td>
+                        <td>Si el RFC del emisor de la cuenta ordenante es XEXX010101000, este campo es obligatorio.</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>Tarjeta de servicios</td>
+                        <td>Sí</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{15,16}</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}</td>
+                        <td>No</td>
+                        <td>Si el RFC del emisor de la cuenta ordenante es XEXX010101000, este campo es obligatorio.</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>Aplicación de anticipos</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>Intermediario pagos</td>
+                        <td>No</td>
+                        <td>Opcional</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>99</td>
+                        <td>Por definir</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                        <td>Opcional</td>
+                    </tr>                
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo de script JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>
