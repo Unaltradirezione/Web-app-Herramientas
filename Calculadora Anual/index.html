@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de ISR Anual</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Logo -->
+    <img src="logo.jpg" alt="Logo" class="logo">
+
+    <!-- Título -->
+    <h2>Calculadora de ISR Anual</h2>
+
+    <!-- Formulario de ingreso -->
+    <div class="input-group">
+      <label for="ingresoAnual">Ingreso Anual:</label>
+      <input type="number" id="ingresoAnual" placeholder="Ingresa tu ingreso anual">
+    </div>
+
+    <div class="input-group">
+      <label for="deducibles">Deducibles:</label>
+      <input type="number" id="deducibles" placeholder="Ingresa tus deducciones">
+    </div>
+
+    <!-- Botón para calcular -->
+    <button onclick="calcularImpuestosAnuales()">Calcular</button>
+
+    <!-- Resultados -->
+    <div id="resultadoImpuestos" style="display:none;">
+      <h3>Resultados</h3>
+      <p><strong>Ingreso Anual:</strong> <span id="ingresoAnualValor"></span></p>
+      <p><strong>Gastos Anuales:</strong> <span id="gastosAnualesValor"></span></p>
+      <p><strong>ISR Anual:</strong> <span id="isrAnual"></span></p>
+      <p><strong>Porcentaje ISR:</strong> <span id="porcentajeISR"></span></p>
+    </div>
+
+    <!-- Notas legales -->
+    <p class="nota-legal">Este cálculo es solo una referencia y no sustituye la asesoría profesional.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
