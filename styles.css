@@ -25,25 +25,19 @@ body.dark-mode {
   left: 0;
   top: 0;
   width: 280px;
-  height: 100vh;
+  height: 150vh;
   background-color: #007bff;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los elementos en el Sidebar */
-  justify-content: flex-start; /* Mantiene el contenido alineado al principio */
+  align-items: center;
+  justify-content: flex-start;
   transition: background-color 0.3s, width 0.3s;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 1000;
 }
-
-/* Estilo para el logo redondo */
-.sidebar-header img {
-  width: 80px; /* Ajusta el tamaño del logo */
-  height: 80px;
-  border-radius: 50%; /* Hace el logo redondo */
-  margin-bottom: 20px;
-}
-
 
 /* Modo oscuro para el Sidebar */
 .sidebar.dark-mode {
@@ -56,6 +50,14 @@ body.dark-mode {
   font-weight: bold;
   color: white;
   margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el logo redondo */
+.sidebar-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   margin-bottom: 20px;
 }
 
@@ -73,15 +75,15 @@ body.dark-mode {
 /* Estilos de los botones en el sidebar */
 .sidebar-menu button {
   width: 100%;
-  padding: 15px;
+  padding: 5px;
   text-align: left;
   background: #007bff;
   color: white;
   border: none;
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 16px;
+  gap: 12px;
+  font-size: 14px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
@@ -106,26 +108,32 @@ body.dark-mode {
   color: white;
 }
 
-/* Botón para alternar entre modo claro y oscuro */
+/* Estilo para el botón de alternar entre modo claro y oscuro */
 .dark-mode-toggle {
-  position: fixed; /* Posición fija para que el botón siempre esté visible */
-  bottom: 10px; /* 20px desde la parte inferior */
-  left: 85px; /* Alineado a la izquierda, 20px desde el borde */
-  transform: translateX(-50%); /* Centra el botón completamente */
-  padding: 12px;
+  position: absolute; /* Cambia a "absolute" para fijarlo arriba */
+  top: 10px; /* Lo coloca en la parte superior del sidebar */
+  left: 10%;
+  transform: translateX(-50%); /* Para centrarlo horizontalmente */
+  padding: 10px; /* Ajusta el padding para que solo se vea el ícono */
   background-color: #343a40;
   color: white;
   cursor: pointer;
-  width: auto;
+  width: 40px;  /* Hace que el botón sea un círculo */
+  height: 40px; /* Asegura que el tamaño sea cuadrado */
   font-size: 16px;
-  border-radius: 8px;
-  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+  border-radius: 50%; /* Hazlo redondo */
+  z-index: 1000;
   transition: background-color 0.3s ease;
 }
 
-/* Efecto hover para el botón */
+/* Hover para el botón */
 .dark-mode-toggle:hover {
-  background-color: #0056b3; /* Color al pasar el ratón */
+  background-color: #0056b3;
+}
+
+/* Cambia el color del ícono en el modo oscuro */
+.dark-mode .dark-mode-toggle {
+  background-color: #007bff;
 }
 
 /* Ajustar el contenido para que no quede debajo del sidebar */
@@ -137,21 +145,21 @@ body.dark-mode {
   overflow-y: auto;
   box-sizing: border-box;
   transition: margin-left 0.3s, background-color 0.3s, color 0.3s;
-  background-color: #fafafa; /* Fondo claro por defecto */
-  color: #000; /* Texto oscuro por defecto */
+  background-color: #fafafa;
+  color: #000;
 }
 
 /* Modo oscuro para el contenido */
 .content-container.dark-mode {
-  background-color: #222; /* Fondo oscuro cuando esté en modo oscuro */
-  color: #eaeaea; /* Texto claro cuando esté en modo oscuro */
+  background-color: #222;
+  color: #eaeaea;
 }
 
 /* Estilo para las pestañas */
 .tab {
   padding: 16px;
   border: 1px solid #ccc;
-  background: #f7f7f7; /* Color de fondo claro por defecto */
+  background: #f7f7f7;
   border-radius: 8px;
   text-align: center;
   transition: background 0.3s, color 0.3s;
@@ -160,8 +168,8 @@ body.dark-mode {
 }
 
 .tab.dark-mode {
-  background-color: #555; /* Fondo oscuro para el modo oscuro */
-  color: white; /* Texto claro en modo oscuro */
+  background-color: #555;
+  color: white;
 }
 
 /* Estilo cuando la pestaña está activa */
@@ -176,7 +184,7 @@ body.dark-mode {
 .content {
   display: none;
   padding: 20px;
-  background: #ffffff; /* Fondo blanco por defecto */
+  background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -184,8 +192,8 @@ body.dark-mode {
 }
 
 .content.dark-mode {
-  background: #333; /* Fondo oscuro para modo oscuro */
-  color: white; /* Texto claro en modo oscuro */
+  background: #333;
+  color: white;
 }
 
 /* Mostrar contenido activo */
@@ -201,15 +209,57 @@ iframe {
   border-radius: 8px;
 }
 
-/* Estilos para dispositivos pequeños */
+/* ============================
+   Estilos para dispositivos pequeños
+   ============================ */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
     align-items: center;
   }
 
+  .sidebar {
+    position: relative;         /* Para que el sidebar no sea fijo en móviles */
+    width: 100%;
+    height: auto;
+    flex-direction: row;        /* Botones uno al lado del otro */
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .sidebar-header {
+    display: none;              /* Opcional: oculta el título/logo si ocupa mucho espacio */
+  }
+
+  .sidebar-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .sidebar-menu li {
+    width: auto;                /* Para que los botones no ocupen todo el ancho */
+    margin: 5px;
+  }
+
+  .sidebar-menu button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .dark-mode-toggle {
+    position: static;
+    margin-top: 10px;
+    transform: none;
+    left: auto;
+    bottom: auto;
+  }
+
   .content-container {
-    margin-left: 0;
+    margin-left: 0 !important;
     width: 100%;
     padding: 10px;
     height: auto;
