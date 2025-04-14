@@ -2,129 +2,150 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biblioteca de Ligas SAT</title>
-  <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="style.css?v=2"> <!-- v=2 para evitar caché -->
 </head>
 
 <body>
 
+  <!-- Botón para menú responsive -->
+  <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')" aria-label="Abrir menú">
+    ☰
+  </button>
+
+  <!-- Menú lateral -->
   <div class="sidebar">
     <div class="sidebar-header">
-      <img src="https://img.icons8.com/ios/452/tax.png" alt="Logo SAT">
+      <img src="https://img.icons8.com/ios/452/tax.png" alt="Logo SAT" />
       <h1>Biblioteca SAT</h1>
     </div>
     <div class="sidebar-menu">
-      <button class="active">Accesos directos SAT</button> <!-- Corregido: Acsesos → Accesos -->
+      <button class="active">Accesos directos SAT</button>
     </div>
   </div>
 
+  <!-- Contenido principal -->
   <div class="content-container">
+
+    <!-- Sección: Declaraciones SAT -->
     <div class="category">
       <h2>Declaraciones SAT</h2>
       <div class="links-container">
         <a href="https://pstcdypisr.clouda.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/calculator.png" alt="Declaraciones RESICO">
+          <img src="https://img.icons8.com/ios/452/calculator.png" alt="Declaraciones RESICO" />
           <h3>Declaraciones RESICO y Empresarial</h3>
           <p>Accede a la plataforma de declaraciones RESICO y Empresarial</p>
         </a>
         <a href="https://anualpf.clouda.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/file.png" alt="Declaración Anual">
+          <img src="https://img.icons8.com/ios/452/file.png" alt="Declaración Anual" />
           <h3>Declaración Anual</h3>
-          <p>Enlace directo a la página para declaración anual</p> <!-- Corregido: declaracion → declaración -->
+          <p>Enlace directo a la página para declaración anual</p>
         </a>
         <a href="https://ptscpteweb.clouda.sat.gob.mx/platec" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/calendar.png" alt="Declaraciones PLATEC">
-          <h3>Declaraciones PLATEC</h3> <!-- Corregido: platec → PLATEC -->
+          <img src="https://img.icons8.com/ios/452/calendar.png" alt="Declaraciones PLATEC" />
+          <h3>Declaraciones PLATEC</h3>
           <p>Enlace declaraciones plataformas tecnológicas</p>
         </a>
         <a href="https://pstcdi.clouda.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/calendar.png" alt="DIOT">
+          <img src="https://img.icons8.com/ios/452/calendar.png" alt="DIOT" />
           <h3>DIOT</h3>
-          <p>Enlace Declaración Informativa de Operaciones con Terceros</p>
+          <p>Declaración Informativa de Operaciones con Terceros</p>
         </a>
       </div>
     </div>
 
+    <!-- Sección: Consultas SAT -->
     <div class="category">
       <h2>Consultas SAT</h2>
       <div class="links-container">
         <a href="https://wwwmat.sat.gob.mx/app/seg/faces/pages/lanzador.jsf?url=/operacion/43824/reimprime-tus-acuses-del-rfc&tipoLogeo=c&target=principal&hostServer=https://wwwmat.sat.gob.mx"
           target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/search.png" alt="Consulta CSF">
+          <img src="https://img.icons8.com/ios/452/search.png" alt="Consulta CSF" />
           <h3>CSF</h3>
-          <p>Enlace para constancia de situación fiscal y movimientos</p> <!-- Corregido: constnacia → constancia -->
+          <p>Constancia de situación fiscal y movimientos</p>
         </a>
         <a href="https://ptsc32d.clouda.sat.gob.mx/?/reporteOpinion32DContribuyente" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/search.png" alt="Opinión cumplimiento">
+          <img src="https://img.icons8.com/ios/452/search.png" alt="Opinión cumplimiento" />
           <h3>Opinión de cumplimiento</h3>
-          <p>Obtén tu opinión de cumplimiento</p> <!-- Corregido: Obten → Obtén -->
+          <p>Obtén tu opinión de cumplimiento</p>
         </a>
         <a href="https://portalcfdi.facturaelectronica.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/search.png" alt="Consulta CFDI">
-          <h3>Consulta de facturas y retenciones</h3> <!-- Corregido: Consutla → Consulta -->
-          <p>Cancela y recupera tus facturas</p> <!-- Corregido: factruas → facturas -->
+          <img src="https://img.icons8.com/ios/452/search.png" alt="Consulta CFDI" />
+          <h3>Consulta de facturas y retenciones</h3>
+          <p>Cancela y recupera tus facturas</p>
         </a>
         <a href="https://www.siat.sat.gob.mx/PTSC/auth/faces/pages/validar/pwd.jsf" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/search.png" alt="Validar CIEC">
+          <img src="https://img.icons8.com/ios/452/search.png" alt="Validar CIEC" />
           <h3>Validar CIEC</h3>
-          <p>Permite validar si es correcta o incorrecta la CIEC</p>
+          <p>Valida si tu CIEC es correcta</p>
         </a>
         <a href="https://portalsat.plataforma.sat.gob.mx/RecuperacionDeCertificados/faces/consultaCertificados.xhtml"
           target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/search.png" alt="Recuperación Certificados">
-          <h3>Recuperación de Certificados</h3> <!-- Corregido: Recuperacion → Recuperación -->
-          <p>Recuperar .cer de Sellos Digitales y e.firma</p>
+          <img src="https://img.icons8.com/ios/452/search.png" alt="Recuperación Certificados" />
+          <h3>Recuperación de Certificados</h3>
+          <p>Recupera .cer de Sellos Digitales y e.firma</p>
         </a>
       </div>
     </div>
 
+    <!-- Sección: Visores -->
     <div class="category">
       <h2>Visores</h2>
       <div class="links-container">
         <a href="https://ptscvisorpredepro.clouda.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor deducciones">
-          <h3>Deducciones personales</h3> <!-- Corregido: Deduciones → Deducciones -->
+          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor deducciones" />
+          <h3>Deducciones personales</h3>
           <p>Visor de deducciones personales</p>
         </a>
         <a href="https://ptscdanvisorpf.clouda.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor trabajador">
-          <h3>Comprobantes de nómina para el trabajador</h3> <!-- Corregido: nomina → nómina -->
-          <p>Visor de comprobantes de nómina para el trabajador</p>
+          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor trabajador" />
+          <h3>Comprobantes de nómina para el trabajador</h3>
+          <p>Consulta de recibos de nómina</p>
         </a>
         <a href="https://ptscdanvisoret.clouda.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor patrón">
-          <h3>Comprobantes de nómina para el patrón</h3> <!-- Corregido: nomina → nómina -->
-          <p>Visor de comprobantes de nómina para el patrón</p>
+          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor patrón" />
+          <h3>Comprobantes de nómina para el patrón</h3>
+          <p>Consulta de recibos de nómina</p>
         </a>
         <a href="https://ptcvisorcfdiingegr.clouda.sat.gob.mx/" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor RESICO">
+          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Visor RESICO" />
           <h3>Visor de facturas para RESICO</h3>
           <p>Consulta de facturas emitidas y recibidas</p>
         </a>
       </div>
     </div>
 
-    <!-- Movido este bloque FUERA de la categoría anterior -->
+    <!-- Sección: Devoluciones y compensaciones -->
     <div class="category">
       <h2>Devoluciones y compensaciones (FED)</h2>
       <div class="links-container">
         <a href="https://wwwmat.sat.gob.mx/tramites/login/24016/solicita-tu-devolucion" target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Devolución Manual">
-          <h3>Devolución Manual</h3> <!-- Corregido: Devolucion → Devolución -->
-          <p>Solicita la devolución de saldos a favor de ISR, IVA y pago de lo indebido</p>
+          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Devolución Manual" />
+          <h3>Devolución Manual</h3>
+          <p>Solicita la devolución de ISR, IVA y pagos indebidos</p>
         </a>
         <a href="https://wwwmat.sat.gob.mx/app/seg/faces/pages/lanzador.jsf?url=/operacion/60336/consulta-tu-devolucion-automatica-2021&tipoLogeo=c&target=principal&hostServer=https://wwwmat.sat.gob.mx"
           target="_blank" class="link-card" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Consulta Devolución">
+          <img src="https://img.icons8.com/ios/452/clipboard.png" alt="Consulta Devolución" />
           <h3>Consulta de devolución</h3>
-          <p>Consulta estatus de la devolución automática o manual</p> <!-- Corregido: Consutla / devoluscion → Consulta / devolución -->
+          <p>Estatus de devoluciones automáticas y manuales</p>
         </a>
       </div>
     </div>
 
-  </div> <!-- cierra content-container -->
+  </div> <!-- Fin content-container -->
+
+  <!-- Script para cerrar menú en móvil -->
+  <script>
+    const links = document.querySelectorAll('.sidebar-menu button');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-open');
+      });
+    });
+  </script>
 
 </body>
 
