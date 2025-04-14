@@ -149,8 +149,10 @@ body.dark-mode {
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   transition: all 0.3s ease-in-out;
+  font-size: 1.02em; /* Texto general 2% más grande */
 }
 
 .link-card:hover {
@@ -160,13 +162,56 @@ body.dark-mode {
 }
 
 .link-card h3 {
-  font-size: 1em;
+  font-size: 1.02em; /* Título ligeramente más grande */
   font-weight: 600;
   margin: 0;
 }
 
 .link-card p {
+  display: block;         /* Asegura que se vea */
+  font-size: 1.02em;      /* Texto un poco más grande */
+  margin-top: 10px;
+}
+
+.link-card img,
+.link-card svg {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 10px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover img,
+.link-card:hover svg {
+  transform: scale(1.1);
+}
+
+/* Dark mode para tarjetas */
+body.dark-mode .link-card {
+  background: linear-gradient(135deg, #1f4e79, #125d98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #eaeaea;
+}
+
+body.dark-mode .link-card:hover {
+  background: linear-gradient(135deg, #125d98, #1f4e79);
+}
+
+
+/* Mostrar descripción solo al hacer hover */
+.link-card p {
   display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 0.85em;
+  margin-top: 8px;
+  color: white;
+}
+
+.link-card:hover p {
+  display: block;
+  opacity: 1;
 }
 
 .link-card img,
