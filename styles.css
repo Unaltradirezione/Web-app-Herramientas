@@ -2,7 +2,6 @@
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
-  background-color: #fafafa;
   margin: 0;
   padding: 0;
   display: flex;
@@ -11,15 +10,23 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   transition: background-color 0.3s, color 0.3s;
+  background-color: #fafafa;
+  color: #000;
 }
 
-/* Estilos para el modo oscuro */
+/* ====== Modo Oscuro ====== */
 body.dark-mode {
   background-color: #2c2c2c;
   color: #eaeaea;
 }
 
-/* Estilos para el Sidebar */
+/* ====== Modo Verde Oscuro ====== */
+body.green-mode {
+  background-color: #1b3a2b;
+  color: #eaeaea;
+}
+
+/* ===== Sidebar General ===== */
 .sidebar {
   position: fixed;
   left: 0;
@@ -39,12 +46,14 @@ body.dark-mode {
   z-index: 1000;
 }
 
-/* Modo oscuro para el Sidebar */
 .sidebar.dark-mode {
   background-color: #343a40;
 }
 
-/* Título del sidebar */
+.sidebar.green-mode {
+  background-color: #264d3b;
+}
+
 .sidebar-header {
   font-size: 22px;
   font-weight: bold;
@@ -53,7 +62,10 @@ body.dark-mode {
   margin-bottom: 20px;
 }
 
-/* Estilo para el logo redondo */
+.sidebar.green-mode .sidebar-header {
+  color: #cdeac0;
+}
+
 .sidebar-header img {
   width: 80px;
   height: 80px;
@@ -61,7 +73,6 @@ body.dark-mode {
   margin-bottom: 20px;
 }
 
-/* Estilos para el menú de sidebar */
 .sidebar-menu {
   list-style: none;
   padding: 0;
@@ -72,7 +83,6 @@ body.dark-mode {
   width: 100%;
 }
 
-/* Estilos de los botones en el sidebar */
 .sidebar-menu button {
   width: 100%;
   padding: 5px;
@@ -88,12 +98,26 @@ body.dark-mode {
   transition: background 0.3s, color 0.3s;
 }
 
-/* Hover para los botones del sidebar */
 .sidebar-menu button:hover {
   background: linear-gradient(45deg, #00c975, #007bff);
 }
 
-/* Submenú */
+.sidebar.dark-mode .sidebar-menu button {
+  background: #343a40;
+  color: #eaeaea;
+}
+
+.sidebar.green-mode .sidebar-menu button {
+  background-color: #2f5c46;
+  color: #cdeac0;
+}
+
+.sidebar.green-mode .sidebar-menu button:hover,
+.sidebar.green-mode .sidebar-menu button.active {
+  background: linear-gradient(45deg, #00c975, #1e5631);
+  color: white;
+}
+
 .sidebar-menu .submenu {
   display: none;
   padding-left: 20px;
@@ -108,35 +132,37 @@ body.dark-mode {
   color: white;
 }
 
-/* Estilo para el botón de alternar entre modo claro y oscuro */
+/* Botón de modo oscuro/verde */
 .dark-mode-toggle {
-  position: absolute; /* Cambia a "absolute" para fijarlo arriba */
-  top: 10px; /* Lo coloca en la parte superior del sidebar */
+  position: absolute;
+  top: 10px;
   left: 10%;
-  transform: translateX(-50%); /* Para centrarlo horizontalmente */
-  padding: 10px; /* Ajusta el padding para que solo se vea el ícono */
+  transform: translateX(-50%);
+  padding: 10px;
   background-color: #343a40;
   color: white;
   cursor: pointer;
-  width: 40px;  /* Hace que el botón sea un círculo */
-  height: 40px; /* Asegura que el tamaño sea cuadrado */
+  width: 40px;
+  height: 40px;
   font-size: 16px;
-  border-radius: 50%; /* Hazlo redondo */
+  border-radius: 50%;
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
 
-/* Hover para el botón */
-.dark-mode-toggle:hover {
-  background-color: #0056b3;
-}
-
-/* Cambia el color del ícono en el modo oscuro */
 .dark-mode .dark-mode-toggle {
   background-color: #007bff;
 }
 
-/* Ajustar el contenido para que no quede debajo del sidebar */
+.green-mode .dark-mode-toggle {
+  background-color: #388e3c;
+}
+
+.green-mode .dark-mode-toggle:hover {
+  background-color: #2e7d32;
+}
+
+/* Contenido principal */
 .content-container {
   margin-left: 280px;
   padding: 20px;
@@ -149,13 +175,17 @@ body.dark-mode {
   color: #000;
 }
 
-/* Modo oscuro para el contenido */
 .content-container.dark-mode {
   background-color: #222;
   color: #eaeaea;
 }
 
-/* Estilo para las pestañas */
+.content-container.green-mode {
+  background-color: #203f30;
+  color: #cdeac0;
+}
+
+/* Pestañas */
 .tab {
   padding: 16px;
   border: 1px solid #ccc;
@@ -172,7 +202,11 @@ body.dark-mode {
   color: white;
 }
 
-/* Estilo cuando la pestaña está activa */
+.tab.green-mode {
+  background-color: #2f5c46;
+  color: #eaeaea;
+}
+
 .tab.active {
   background: linear-gradient(45deg, #00c975, #007bff);
   color: white;
@@ -180,7 +214,12 @@ body.dark-mode {
   border-bottom: 2px solid #ffffff;
 }
 
-/* Contenedor de contenido */
+.tab.green-mode.active {
+  background: linear-gradient(45deg, #00c975, #1e5631);
+  color: white;
+}
+
+/* Contenido */
 .content {
   display: none;
   padding: 20px;
@@ -196,12 +235,15 @@ body.dark-mode {
   color: white;
 }
 
-/* Mostrar contenido activo */
+.content.green-mode {
+  background-color: #2c4635;
+  color: white;
+}
+
 .content.active {
   display: block;
 }
 
-/* Estilos para iframe dentro de content-container */
 iframe {
   width: 100%;
   height: 100%;
@@ -209,9 +251,7 @@ iframe {
   border-radius: 8px;
 }
 
-/* ============================
-   Estilos para dispositivos pequeños
-   ============================ */
+/* Responsive */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
@@ -219,17 +259,17 @@ iframe {
   }
 
   .sidebar {
-    position: relative;         /* Para que el sidebar no sea fijo en móviles */
+    position: relative;
     width: 100%;
     height: auto;
-    flex-direction: row;        /* Botones uno al lado del otro */
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
   }
 
   .sidebar-header {
-    display: none;              /* Opcional: oculta el título/logo si ocupa mucho espacio */
+    display: none;
   }
 
   .sidebar-menu {
@@ -241,7 +281,7 @@ iframe {
   }
 
   .sidebar-menu li {
-    width: auto;                /* Para que los botones no ocupen todo el ancho */
+    width: auto;
     margin: 5px;
   }
 
@@ -254,8 +294,6 @@ iframe {
     position: static;
     margin-top: 10px;
     transform: none;
-    left: auto;
-    bottom: auto;
   }
 
   .content-container {

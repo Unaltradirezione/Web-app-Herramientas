@@ -1,109 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web App Contable</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Aquí puedes enlazar el archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Agregar Font Awesome para los íconos -->
 </head>
 
-<body class="dark-mode"> <!-- Inicia con el modo oscuro -->
-
-  <!-- Contenedor para las pestañas en el lado izquierdo -->
-  <!-- Sidebar Menu -->
-
+<body class="dark-mode">
   <div class="sidebar">
     <div class="sidebar-header">
+      <img src="logo.jpg" alt="logo" class="logo">
       <h2>Menú</h2>
-      <img src="logo.jpg" alt="logo">
     </div>
     <ul class="sidebar-menu">
-      <li><button class="tab" aria-label="Calculadora" onclick="showTab('simulacion', event)"><i
-            class="fas fa-calculator"></i> Calculadora</button></li>
-      <li><button class="tab" aria-label="Buscador de actividades" onclick="showTab('resico', event)"><i
-            class="fas fa-search"></i> Buscador de actividades</button></li>
-      <li><button class="tab" aria-label="Catálogo de productos" onclick="showTab('catalogo', event)"><i
-            class="fas fa-box"></i> Catálogo de productos</button></li>
-      <li><button class="tab" aria-label="Usos CFDI" onclick="showTab('Usos CFDI', event)"><i
-            class="fas fa-file-invoice"></i> Usos CFDI</button></li>
-      <li><button class="tab" aria-label="Formas de pago" onclick="showTab('catalogo de formas de pago', event)"><i
-            class="fas fa-credit-card"></i> Formas de pago</button></li>
-      <li><button class="tab" aria-label="Regímenes fiscales" onclick="showTab('regimenes fiscales', event)"><i
-            class="fas fa-landmark"></i> Regímenes fiscales</button></li>
-      <li><button class="tab" aria-label="Perdida Fiscal" onclick="showTab('Perdida Fiscal', event)"><i
-            class="fas fa-exclamation-triangle"></i> Perdida Fiscal</button></li>
-      <li><button class="tab" aria-label="Deducciones personales" onclick="showTab('Deducciones personales', event)"><i
-            class="fas fa-hand-holding-usd"></i> Deducciones personales</button></li>
-      <li><button class="tab" aria-label="Calculo de ISR anual" onclick="showTab('Calculo de ISR anual', event)"><i
-            class="fas fa-calculator"></i> Calculo de ISR anual</button></li>
-      <li><button class="tab" aria-label="Enlaces sat" onclick="showTab('Enlaces sat', event)"><i
-              class="fas fa-link"></i> Enlaces sat</button></li>
+      <li><button class="tab" onclick="showTab('simulacion', event)"><i class="fas fa-calculator"></i> Calculadora</button></li>
+      <li><button class="tab" onclick="showTab('resico', event)"><i class="fas fa-search"></i> Buscador de actividades</button></li>
+      <li><button class="tab" onclick="showTab('catalogo', event)"><i class="fas fa-box"></i> Catálogo de productos</button></li>
+      <li><button class="tab" onclick="showTab('usos-cfdi', event)"><i class="fas fa-file-invoice"></i> Usos CFDI</button></li>
+      <li><button class="tab" onclick="showTab('formas-pago', event)"><i class="fas fa-credit-card"></i> Formas de pago</button></li>
+      <li><button class="tab" onclick="showTab('regimenes-fiscales', event)"><i class="fas fa-landmark"></i> Regímenes fiscales</button></li>
+      <li><button class="tab" onclick="showTab('perdida-fiscal', event)"><i class="fas fa-exclamation-triangle"></i> Pérdida Fiscal</button></li>
+      <li><button class="tab" onclick="showTab('deducciones-personales', event)"><i class="fas fa-hand-holding-usd"></i> Deducciones personales</button></li>
+      <li><button class="tab" onclick="showTab('calculo-isr-anual', event)"><i class="fas fa-calculator"></i> Cálculo ISR anual</button></li>
+      <li><button class="tab" onclick="showTab('enlaces-sat', event)"><i class="fas fa-link"></i> Enlaces SAT</button></li>
     </ul>
-    <button id="darkModeToggle" aria-label="Alternar entre modo claro y oscuro" onclick="toggleDarkMode()"
-      class="dark-mode-toggle">
-      <i id="darkModeIcon" class="fas fa-moon"></i></button>
+    <button id="darkModeToggle" onclick="toggleDarkMode()" class="dark-mode-toggle">
+      <i id="darkModeIcon" class="fas fa-moon"></i>
+    </button>
   </div>
 
-  <!-- Contenedor del contenido, que se ajusta al lado derecho -->
   <div class="content-container">
-    <!-- Contenido de la Calculadora -->
     <div id="simulacion" class="content">
-      <iframe src="Simulacin para comparar regimenes/calculadora.html" title="Calculadora para comparar regimenes"
-        style="border:none;"></iframe>
+      <iframe src="Simulacin para comparar regimenes/calculadora.html" title="Calculadora" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido del Buscador de actividades -->
     <div id="resico" class="content">
-      <iframe src="buscador de actividades/buscador-actividades.html" title="Buscador de actividades"
-        style="border:none;"></iframe>
+      <iframe src="buscador de actividades/buscador-actividades.html" title="Buscador de actividades" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido del Catálogo de productos y servicios -->
     <div id="catalogo" class="content">
-      <iframe src="catalogo productos y servicios/index.html" title="Catálogo de productos y servicios" style="border:none;"></iframe>
+      <iframe src="catalogo productos y servicios/index.html" title="Catálogo productos y servicios" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido del Catálogo de Usos de CFDI -->
-    <div id="Usos CFDI" class="content">
-      <iframe src="usos de cfdi/index.html" title="Usos de CFDI" style="border:none;"></iframe>
+    <div id="usos-cfdi" class="content">
+      <iframe src="usos de cfdi/index.html" title="Usos CFDI" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido del Catálogo de formas de pago -->
-    <div id="catalogo de formas de pago" class="content">
-      <iframe src="Formas de pago/index.html" title="Catálogo de formas de pago" style="border:none;"></iframe>
+    <div id="formas-pago" class="content">
+      <iframe src="Formas de pago/index.html" title="Formas de pago" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido del Catálogo de Regímenes fiscales -->
-    <div id="regimenes fiscales" class="content">
-      <iframe src="Regimenes fiscales/index.html" title="Regímenes fiscales" style="border:none;"></iframe>
+    <div id="regimenes-fiscales" class="content">
+      <iframe src="Regimenes fiscales/index.html" title="Regímenes fiscales" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido para actualizar perdidas fiscales -->
-    <div id="Perdida Fiscal" class="content">
-      <iframe src="Actualizacion de perdida fiscal/index.html" title="Perdida Fiscal" style="border:none;"></iframe>
+    <div id="perdida-fiscal" class="content">
+      <iframe src="Actualizacion de perdida fiscal/index.html" title="Pérdida Fiscal" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido de Deducciones personales-->
-    <div id="Deducciones personales" class="content">
-      <iframe src="Deducciones personales" title="Deducciones personales" style="border:none;"></iframe>
+    <div id="deducciones-personales" class="content">
+      <iframe src="Deducciones personales/index.html" title="Deducciones personales" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido Calculo anual-->
-    <div id="Calculo de ISR anual" class="content">
-      <iframe src="calculadora_anual/index.html" title="Calculo de ISR anual" style="border:none;"></iframe>
+    <div id="calculo-isr-anual" class="content">
+      <iframe src="calculadora_anual/index.html" title="Cálculo ISR anual" frameborder="0"></iframe>
     </div>
 
-    <!-- Contenido Enlaces SAT-->
-    <div id="Enlaces sat" class="content">
-      <iframe src="insertar paginas del sat/index.html" title="Enlaces sat" style="border:none;"></iframe>
+    <div id="enlaces-sat" class="content">
+      <iframe src="insertar paginas del sat/index.html" title="Enlaces SAT" frameborder="0"></iframe>
     </div>
   </div>
 
-  <!-- Aquí puedes enlazar tu archivo JS -->
   <script src="script.js"></script>
 </body>
-
 </html>
