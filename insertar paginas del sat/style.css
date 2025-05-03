@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* ========== ESTILOS BASE ========== */
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
@@ -18,7 +18,7 @@ body.dark-mode {
   color: #eaeaea;
 }
 
-/* Sidebar */
+/* ========== SIDEBAR ========== */
 .sidebar {
   position: fixed;
   left: 0;
@@ -72,18 +72,20 @@ body.dark-mode {
   padding: 5px;
   text-align: left;
   background: #007bff;
-  color: white;
+  color: #fff;
   border: none;
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
 
 .sidebar-menu button:hover {
   background: linear-gradient(45deg, #00c975, #007bff);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .sidebar-menu button.active {
@@ -91,7 +93,7 @@ body.dark-mode {
   color: white;
 }
 
-/* Contenedor principal */
+/* ========== CONTENEDOR PRINCIPAL ========== */
 .content-container {
   margin-left: 280px;
   padding: 20px;
@@ -109,7 +111,7 @@ body.dark-mode {
   color: #eaeaea;
 }
 
-/* Secciones */
+/* ========== SECCIONES ========== */
 .category {
   margin-bottom: 50px;
 }
@@ -123,6 +125,23 @@ body.dark-mode {
   padding-bottom: 5px;
 }
 
+/* Agregar diferentes colores para cada categoría */
+.category:nth-child(1) h2 {
+  color: #00c975; /* Verde */
+}
+
+.category:nth-child(2) h2 {
+  color: #007bff; /* Azul */
+}
+
+.category:nth-child(3) h2 {
+  color: #f39c12; /* Naranja */
+}
+
+.category:nth-child(4) h2 {
+  color: #e74c3c; /* Rojo */
+}
+
 .links-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -131,19 +150,16 @@ body.dark-mode {
   justify-items: center;
 }
 
-/* =============== */
-/* 🔄 NUEVOS ESTILOS link-card */
-/* =============== */
-
+/* ========== LINK CARD (ICONOS) MODIFICADOS ========== */
 .link-card {
   width: 100%;
-  max-width: 180px;
-  height: 180px;
+  max-width: 200px; /* Aumenta el tamaño para iconos más grandes */
+  height: 200px;
   background: linear-gradient(135deg, #007bff, #00c9a7);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  padding: 16px;
+  padding: 20px; /* Ajusta el padding para que el icono sea más grande */
   color: white;
   text-align: center;
   text-decoration: none;
@@ -152,7 +168,8 @@ body.dark-mode {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
-  font-size: 1.02em; /* Texto general 2% más grande */
+  font-size: 1.02em;
+  position: relative;
 }
 
 .link-card:hover {
@@ -161,52 +178,38 @@ body.dark-mode {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
-.link-card h3 {
-  font-size: 1.02em; /* Título ligeramente más grande */
-  font-weight: 600;
-  margin: 0;
-}
-
-.link-card p {
-  display: block;         /* Asegura que se vea */
-  font-size: 1.02em;      /* Texto un poco más grande */
-  margin-top: 10px;
-}
-
+/* ========== ICONOS RECTANGULARES Y REDONDEADOS ========== */
 .link-card img,
 .link-card svg {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   margin: 0 auto 10px;
   fill: white;
-  transition: transform 0.3s ease;
+  border-radius: 10px; /* Hace que los iconos sean redondeados */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo transparente blanco para los iconos */
+  padding: 8px; /* Espaciado para el fondo */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .link-card:hover img,
 .link-card:hover svg {
   transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.4); /* Cambia el fondo al hacer hover */
 }
 
-/* Dark mode para tarjetas */
-body.dark-mode .link-card {
-  background: linear-gradient(135deg, #1f4e79, #125d98);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #eaeaea;
+.link-card h3 {
+  font-size: 1.02em;
+  font-weight: 600;
+  margin: 0;
 }
 
-body.dark-mode .link-card:hover {
-  background: linear-gradient(135deg, #125d98, #1f4e79);
-}
-
-
-/* Mostrar descripción solo al hacer hover */
 .link-card p {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
   font-size: 0.85em;
   margin-top: 8px;
   color: white;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .link-card:hover p {
@@ -214,21 +217,7 @@ body.dark-mode .link-card:hover {
   opacity: 1;
 }
 
-.link-card img,
-.link-card svg {
-  width: 42px;
-  height: 42px;
-  margin: 0 auto 10px;
-  fill: white;
-  transition: transform 0.3s ease;
-}
-
-.link-card:hover img,
-.link-card:hover svg {
-  transform: scale(1.1);
-}
-
-/* Dark mode para tarjetas */
+/* ========== DARK MODE PARA LINK CARDS ========== */
 body.dark-mode .link-card {
   background: linear-gradient(135deg, #1f4e79, #125d98);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -239,9 +228,7 @@ body.dark-mode .link-card:hover {
   background: linear-gradient(135deg, #125d98, #1f4e79);
 }
 
-/* ============================ */
-/* Estilos para dispositivos pequeños */
-/* ============================ */
+/* ========== RESPONSIVE: TABLET ========== */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
@@ -306,5 +293,28 @@ body.dark-mode .link-card:hover {
 
   .link-card h3 {
     font-size: 0.95em;
+  }
+}
+
+/* ========== RESPONSIVE: MÓVIL PEQUEÑO ========== */
+@media (max-width: 480px) {
+  .link-card {
+    max-width: 140px;
+    height: 140px;
+    padding: 10px;
+  }
+
+  .link-card img,
+  .link-card svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .link-card h3 {
+    font-size: 0.9em;
+  }
+
+  .link-card p {
+    font-size: 0.8em;
   }
 }
