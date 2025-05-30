@@ -1,0 +1,50 @@
+/* === Cuadros estilo mosaico dentro de content-container === */
+.mosaic-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.mosaic-box {
+  flex: 1 1 30%;
+  background-color: #007bff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.2s, background-color 0.3s;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.mosaic-box:hover {
+  transform: scale(1.05);
+}
+
+/* Modos para las cajas */
+body.dark-mode .mosaic-box {
+  background-color: #555;
+  color: #fff;
+}
+
+body.green-mode .mosaic-box {
+  background-color: #2f5c46;
+  color: #cdeac0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mosaic-box {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mosaic-box {
+    flex: 1 1 100%;
+  }
+}

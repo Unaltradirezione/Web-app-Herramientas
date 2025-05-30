@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Interactivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      Panel Legal
+   
+  <!-- Contenido principal -->
+  <div class="content-container">
+    <div class="content active">
+      <h2>Panel Interactivo de nomina</h2>
+      <div class="mosaic-container">
+        <div class="mosaic-box" onclick="loadContent('https://www.diputados.gob.mx/LeyesBiblio/index.htm')">Leyes</div>
+        <div class="mosaic-box" onclick="loadContent('https://www.scjn.gob.mx/tesis-jurisprudenciales')">Tesis</div>
+        <div class="mosaic-box" onclick="loadContent('https://www.calculadorarfc.com.mx/')">Cálculos</div>
+        <div class="mosaic-box" onclick="loadContent('https://www.imss.gob.mx/personas-trabajadoras')">Nóminas</div>
+        <div class="mosaic-box" onclick="loadContent('https://www.imss.gob.mx/')">Ligas IMSS</div>
+      </div>
+
+      <iframe id="viewer" src=""></iframe>
+    </div>
+  </div>
+
+  <!-- Script para cargar iframe -->
+  <script>
+    function loadContent(url) {
+      document.getElementById('viewer').src = url;
+    }
+  </script>
+</body>
+</html>
