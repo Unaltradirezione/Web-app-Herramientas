@@ -1,50 +1,66 @@
-/* === Cuadros estilo mosaico dentro de content-container === */
+/* === Contenedor de los cuadros estilo mosaico === */
 .mosaic-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
+  display: flex;                 /* Usa Flexbox para alinear los elementos hijos */
+  flex-wrap: wrap;               /* Permite que los elementos se ajusten a la siguiente línea si no caben */
+  justify-content: center;      /* Centra los elementos horizontalmente */
+  gap: 15px;                     /* Espacio entre los cuadros */
+  margin-top: 20px;             /* Margen superior del contenedor */
+  width: 100vw;              /* ✅ Ocupa todo el ancho de la pantalla */
+  padding: 10px;           /* Opcional: espacio interior lateral */
+  box-sizing: border-box;    /* ✅ Incluye padding dentro del ancho */
 }
 
+/* === Estilo individual de cada cuadro tipo mosaico === */
 .mosaic-box {
-  flex: 1 1 30%;
-  background-color: #007bff;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: bold;
-  color: #fff;
-  transition: transform 0.2s, background-color 0.3s;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  min-width: 200px;
+  flex: 1 1 30%;                 /* Ocupa aproximadamente el 30% del ancho, puede crecer o reducirse */
+  background-color: #007bff;    /* Color de fondo azul (modo normal) */
+  padding: 20px;                /* Espaciado interno */
+  border-radius: 12px;          /* Bordes redondeados */
+  text-align: center;           /* Centra el texto horizontalmente */
+  font-weight: bold;            /* Texto en negrita */
+  color: #fff;                  /* Texto blanco */
+  transition: transform 0.2s, background-color 0.3s; /* Transición suave al hacer hover */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  cursor: pointer;              /* Cambia el cursor a mano indicando que es interactivo */
+  min-width: 200px;             /* Asegura que el cuadro no sea demasiado pequeño */
 }
 
+/* === Efecto al pasar el mouse por encima del cuadro === */
 .mosaic-box:hover {
-  transform: scale(1.05);
+  transform: scale(1.05);       /* Hace que el cuadro crezca ligeramente al pasar el mouse */
 }
 
-/* Modos para las cajas */
+/* === Modo oscuro: cambia colores si el <body> tiene la clase .dark-mode === */
 body.dark-mode .mosaic-box {
-  background-color: #555;
-  color: #fff;
+  background-color: #555;       /* Fondo gris oscuro */
+  color: #fff;                  /* Texto blanco */
 }
 
+/* === Modo verde: para un estilo alternativo más ecológico u orgánico === */
 body.green-mode .mosaic-box {
-  background-color: #2f5c46;
-  color: #cdeac0;
+  background-color: #2f5c46;    /* Fondo verde oscuro */
+  color: #cdeac0;               /* Texto verde claro */
 }
 
-/* Responsive */
+/* === Adaptabilidad para pantallas medianas (tabletas) === */
 @media (max-width: 768px) {
   .mosaic-box {
-    flex: 1 1 45%;
+    flex: 1 1 45%;              /* Los cuadros ocuparán casi la mitad del ancho */
   }
 }
 
+/* === Adaptabilidad para pantallas pequeñas (móviles) === */
 @media (max-width: 480px) {
   .mosaic-box {
-    flex: 1 1 100%;
+    flex: 1 1 100%;             /* Los cuadros ocuparán todo el ancho disponible */
   }
 }
+
+
+/* === ancho y alto del iframe donde se muestran las paginas o inserciones ) === */
+.content iframe {
+  width: 100%;
+  height: 90vh; /* O ajusta al tamaño que necesites */
+  border: none;
+}
+
