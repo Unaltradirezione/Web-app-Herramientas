@@ -23,11 +23,197 @@
 
         <!-- Tema: Depreciación -->
         <div class="tema" data-nombre="depreciacion">
-            <button class="tema-btn">Depreciación</button>
+            <button class="tema-btn" onclick="toggleContenido(this)">Depreciación</button>
             <div class="contenido">
-                <p>La depreciación es la pérdida de valor de un activo a lo largo del tiempo debido al uso o desgaste.
-                </p>
-                <img src="https://via.placeholder.com/300x150?text=Depreciacion" alt="Imagen depreciación">
+                <h4>🔹 1. Depreciación en línea recta (método lineal)</h4>
+                <p>Este método reparte la depreciación en partes iguales durante los años de vida útil.</p>
+                <p><strong>Fórmula:</strong></p>
+                <pre>Depreciación anual = (Valor del activo − Valor residual) / Vida útil</pre>
+                <p><strong>Ejemplo:</strong></p>
+                <pre>Depreciación anual = (90,000 − 0) / 5 = 18,000</pre>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Depreciación anual</th>
+                            <th>Valor en libros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>$18,000</td>
+                            <td>$82,000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>$18,000</td>
+                            <td>$64,000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>$18,000</td>
+                            <td>$46,000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>$18,000</td>
+                            <td>$28,000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>$18,000</td>
+                            <td>$10,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>🔹 2. Depreciación por suma de dígitos de los años (acelerada)</h4>
+                <p>Primero calculamos la suma de dígitos: 5 + 4 + 3 + 2 + 1 = 15</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Fracción</th>
+                            <th>Depreciación</th>
+                            <th>Valor en libros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>5/15</td>
+                            <td>$30,000</td>
+                            <td>$70,000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>4/15</td>
+                            <td>$24,000</td>
+                            <td>$46,000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>3/15</td>
+                            <td>$18,000</td>
+                            <td>$28,000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>2/15</td>
+                            <td>$12,000</td>
+                            <td>$16,000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>1/15</td>
+                            <td>$6,000</td>
+                            <td>$10,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>🔹 3. Depreciación decreciente (doble saldo decreciente)</h4>
+                <p>Se aplica un porcentaje doble al método lineal sobre el valor en libros inicial.</p>
+                <p><strong>Tasa lineal:</strong> 1 / 5 = 20% → <strong>Tasa doble:</strong> 40%</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Valor inicial</th>
+                            <th>Depreciación (40%)</th>
+                            <th>Valor en libros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>$100,000</td>
+                            <td>$40,000</td>
+                            <td>$60,000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>$60,000</td>
+                            <td>$24,000</td>
+                            <td>$36,000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>$36,000</td>
+                            <td>$14,400</td>
+                            <td>$21,600</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>$21,600</td>
+                            <td>$8,640</td>
+                            <td>$12,960</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>$12,960</td>
+                            <td>$2,960*</td>
+                            <td>$10,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>*Se ajusta en el último año para que el valor en libros no baje del valor residual
+                        ($10,000).</em></p>
+
+                <h4>🔹 4. Depreciación por unidades de producción</h4>
+                <p>Este método depende del uso real del activo (horas, unidades, km, etc.).</p>
+                <p><strong>Capacidad total:</strong> 100,000 unidades | <strong>Valor depreciable:</strong> $90,000</p>
+                <p><strong>Tasa por unidad:</strong> $90,000 / 100,000 = $0.90</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Unidades producidas</th>
+                            <th>Depreciación</th>
+                            <th>Valor en libros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>30,000</td>
+                            <td>$27,000</td>
+                            <td>$73,000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>25,000</td>
+                            <td>$22,500</td>
+                            <td>$50,500</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>20,000</td>
+                            <td>$18,000</td>
+                            <td>$32,500</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>15,000</td>
+                            <td>$13,500</td>
+                            <td>$19,000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>10,000</td>
+                            <td>$9,000</td>
+                            <td>$10,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Imagen dentro del contenido -->
+                <img src="https://via.placeholder.com/300x150?text=Depreciacion" alt="Imagen depreciación" />
             </div>
         </div>
 
@@ -53,7 +239,7 @@
         <div class="tema" data-nombre="----">
             <button class="tema-btn">----</button>
             <div class="contenido">
-                <p></p>
+
                 <img src="https://via.placeholder.com/300x150?text=ISR" alt="Imagen ISR">
             </div>
         </div>

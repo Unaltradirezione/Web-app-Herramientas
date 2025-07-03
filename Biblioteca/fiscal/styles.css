@@ -1,53 +1,187 @@
-/* ====== Estilo general ====== */
+/* --- BASE: tipografía y layout --- */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #fafafa;
+  color: #000;
   margin: 0;
   padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* ====== Título principal ====== */
-h3 {
-  color: darkgreen;
+body.dark-mode {
+  background-color: #2c2c2c;
+  color: #eaeaea;
 }
 
-/* ====== Buscador arriba ====== */
-.search-container {
-  position: sticky;
-  top: 0;
-  background-color: #f5f5f5;
-  padding: 10px;
-  z-index: 100;
+body.green-mode {
+  background-color: #1b3a2b;
+  color: #cdeac0;
 }
 
-#search-input {
+/* --- TEMAS contenedor --- */
+.tema {
+  background-color: #fff;
+  border-left: 5px solid #007bff;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
+  color: inherit;
+}
+
+body.dark-mode .tema {
+  background-color: #333;
+  border-left-color: #0d6efd;
+  color: #eaeaea;
+}
+
+body.green-mode .tema {
+  background-color: #2c4635;
+  border-left-color: #00c975;
+  color: #cdeac0;
+}
+
+/* --- Botón desplegable --- */
+.tema-btn {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-}
-
-/* ====== Botones de temas ====== */
-button {
-  padding: 10px;
-  border: none;
-  background-color: #cfe2ff;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
+  padding: 12px 16px;
+  background-color: #007bff;
+  color: white;
   font-weight: bold;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* ====== Contenido de cada tema (oculto por defecto) ====== */
+.tema-btn:hover {
+  background: linear-gradient(45deg, #00c975, #007bff);
+}
+
+body.dark-mode .tema-btn {
+  background-color: #0d6efd;
+  color: #eaeaea;
+}
+
+body.dark-mode .tema-btn:hover {
+  background: linear-gradient(45deg, #00c975, #0d6efd);
+}
+
+body.green-mode .tema-btn {
+  background-color: #00c975;
+  color: #1b3a2b;
+}
+
+body.green-mode .tema-btn:hover {
+  background: linear-gradient(45deg, #007bff, #00c975);
+}
+
+/* --- Contenido (oculto por defecto) --- */
 .contenido {
   display: none;
-  padding: 10px;
-  border: 1px solid #ddd;
-  background-color: #fefefe;
-  margin-bottom: 10px;
+  padding: 16px;
+  border-top: 1px solid #ddd;
 }
 
+body.dark-mode .contenido {
+  border-top-color: #555;
+}
+
+body.green-mode .contenido {
+  border-top-color: #0b3a21;
+}
+
+/* --- Títulos dentro de contenido --- */
+.contenido h4 {
+  margin-top: 20px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* --- Párrafos --- */
+.contenido p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* --- Tablas --- */
+.contenido table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background-color: transparent;
+  color: inherit;
+}
+
+.contenido th, .contenido td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 0.95rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contenido thead {
+  background-color: #e7f3ff;
+}
+
+body.dark-mode .contenido thead {
+  background-color: #0d3b78;
+}
+
+body.green-mode .contenido thead {
+  background-color: #14532d;
+}
+
+body.dark-mode .contenido th, 
+body.dark-mode .contenido td {
+  border-color: #555;
+}
+
+body.green-mode .contenido th, 
+body.green-mode .contenido td {
+  border-color: #0b3a21;
+}
+
+/* --- Código y fórmulas (pre) --- */
+pre {
+  background-color: #f3f3f3;
+  padding: 10px 15px;
+  border-left: 4px solid #007bff;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 10px 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode pre {
+  background-color: #222;
+  color: #eaeaea;
+  border-left-color: #0d6efd;
+}
+
+body.green-mode pre {
+  background-color: #1f3822;
+  color: #cdeac0;
+  border-left-color: #00c975;
+}
+
+/* --- Imagenes --- */
 .contenido img {
   max-width: 100%;
-  margin-top: 10px;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+body.dark-mode .contenido img {
+  border-color: #444;
+}
+
+body.green-mode .contenido img {
+  border-color: #0b3a21;
 }
