@@ -1,17 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temas Fiscales</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+
+    <!-- Buscador -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar tema..." onkeyup="filtrarTemas()" />
+    </div>
+
     <h3>Temas Fiscales</h3>
-    <p>Agregar la informacion apartir de aqui</p>
-    <button onclick="mostrarAlertaFiscal()">Mostrar alerta</button>
+    <p>Haz clic en un tema para ver más información:</p>
+
+    <!-- Contenedor de temas -->
+    <div id="temas-container">
+
+        <!-- Tema: Depreciación -->
+        <div class="tema" data-nombre="depreciacion">
+            <button class="tema-btn">Depreciación</button>
+            <div class="contenido">
+                <p>La depreciación es la pérdida de valor de un activo a lo largo del tiempo debido al uso o desgaste.
+                </p>
+                <img src="https://via.placeholder.com/300x150?text=Depreciacion" alt="Imagen depreciación">
+            </div>
+        </div>
+
+        <!-- Tema: IVA -->
+        <div class="tema" data-nombre="----">
+            <button class="tema-btn">---</button>
+            <div class="contenido">
+                <p>---</p>
+                <img src="https://via.placeholder.com/300x150?text=IVA" alt="Imagen IVA">
+            </div>
+        </div>
+
+        <!-- Tema: Multa -->
+        <div class="tema" data-nombre="---">
+            <button class="tema-btn">-----</button>
+            <div class="contenido">
+                <p></p>
+                <img src="https://via.placeholder.com/300x150?text=Multa" alt="Imagen multa">
+            </div>
+        </div>
+
+        <!-- Tema: ISR -->
+        <div class="tema" data-nombre="----">
+            <button class="tema-btn">----</button>
+            <div class="contenido">
+                <p></p>
+                <img src="https://via.placeholder.com/300x150?text=ISR" alt="Imagen ISR">
+            </div>
+        </div>
+
+        <!-- Agrega más temas aquí -->
+        <div class="tema" data-nombre="nuevo-tema">
+            <button class="tema-btn">----</button>
+            <div class="contenido">
+                <p></p>
+                <img src="https://via.placeholder.com/300x150?text=Nuevo+Tema" alt="Imagen del tema">
+            </div>
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,10 +1,53 @@
-h3 {
-    color: darkgreen;
+/* ====== Estilo general ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
+/* ====== Título principal ====== */
+h3 {
+  color: darkgreen;
+}
+
+/* ====== Buscador arriba ====== */
+.search-container {
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  padding: 10px;
+  z-index: 100;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* ====== Botones de temas ====== */
 button {
-    padding: 10px;
-    border: none;
-    background-color: #cfe2ff;
-    cursor: pointer;
+  padding: 10px;
+  border: none;
+  background-color: #cfe2ff;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* ====== Contenido de cada tema (oculto por defecto) ====== */
+.contenido {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fefefe;
+  margin-bottom: 10px;
+}
+
+.contenido img {
+  max-width: 100%;
+  margin-top: 10px;
 }
