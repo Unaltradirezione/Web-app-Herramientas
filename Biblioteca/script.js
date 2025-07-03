@@ -1,44 +1,34 @@
-// Cambiar tema (modo oscuro)
+// Variable global para guardar la sección actual
+let currentSection = '';
+
+// ====== Modo oscuro ======
+// Alterna la clase 'dark-mode' en el body al hacer click
 document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
 
-// Mostrar secciones
+// ====== Función para mostrar sección con iframe ======
 function showSection(sectionId) {
-  const sections = document.querySelectorAll('.content');
-  sections.forEach(section => section.classList.remove('active'));
+  const contentLoader = document.getElementById('content-loader');
+  currentSection = sectionId;
 
-  const section = document.getElementById(sectionId);
-  section.classList.add('active');
+  // Insertamos iframe para cargar el contenido de la carpeta de la sección
+  contentLoader.innerHTML = `
+    <iframe 
+      src="${sectionId}/index.html" 
+      title="Contenido de ${sectionId}" 
+      frameborder="0"
+      loading="lazy"
+      style="width: 100%; height: 600px; border: none; border-radius: 8px;"
+    ></iframe>
+  `;
 }
 
-// Cargar PDF en iframe
-function loadPDF() {
-  const fileInput = document.getElementById('file-upload');
-  const file = fileInput.files[0];
-
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const iframe = document.getElementById('pdf-viewer');
-      iframe.style.display = 'block';
-      iframe.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-}
-
-// Colapsar/expandir sidebar
+// ====== Función para colapsar el sidebar ======
 document.getElementById('toggle-sidebar').addEventListener('click', () => {
   const sidebar = document.querySelector('.sidebar');
-  const button = document.getElementById('toggle-sidebar');
-
   sidebar.classList.toggle('collapsed');
 
-  // Cambiar el icono del botón según estado
-  if (sidebar.classList.contains('collapsed')) {
-    button.textContent = '⏩';
-  } else {
-    button.textContent = '⏪';
-  }
+  // Cambia el ícono del botón según el estado del sidebar
+  document.getElementById('toggle-sidebar').textContent = sidebar.classList.contains('collapsed') ? '⏩' : '⏪';
 });

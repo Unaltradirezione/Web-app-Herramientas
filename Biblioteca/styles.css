@@ -99,25 +99,23 @@ body.dark-mode {
   display: none;
 }
 
-/* Cambios para que los botones tengan más altura y los iconos se separen verticalmente */
 .sidebar.collapsed .sidebar-menu button {
-  font-size: 0; /* Oculta el texto */
-  padding: 10px 12px; /* Más padding vertical para separar los botones */
+  font-size: 0;
+  padding: 10px 12px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.sidebar.collapsed .sidebar-menu button::before { 
+.sidebar.collapsed .sidebar-menu button::before {
   font-size: 18px;
   padding: 0 8px;
-  position: static; /* quita position absolute */
+  position: static;
   left: auto;
   transform: none;
 }
 
-/* ====== Íconos personalizados ====== */
 .sidebar.collapsed .btn-home::before {
   content: '🏠';
 }
@@ -154,9 +152,8 @@ body.dark-mode {
   margin-left: 60px;
 }
 
-/* ====== Secciones ====== */
+/* ====== Secciones de contenido ====== */
 .content {
-  display: none;
   padding: 20px;
   background: #ffffff;
   border-radius: 8px;
@@ -164,14 +161,10 @@ body.dark-mode {
   width: 100%;
 }
 
-.content.active {
-  display: block;
-}
-
-/* ====== iframe PDF ====== */
-iframe {
+/* ====== Estilo iframe ====== */
+.content iframe {
   width: 100%;
-  height: 400px;
+  height: 600px;
   border: none;
   border-radius: 8px;
 }

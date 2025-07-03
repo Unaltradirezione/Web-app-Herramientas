@@ -2,14 +2,17 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biblioteca Fiscal, Financiera y Contable</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Botón para activar modo oscuro -->
   <div class="dark-mode-toggle">🌙</div>
+
+  <!-- Sidebar con menú -->
   <div class="sidebar">
     <div class="sidebar-header">
       <h2>Compendio</h2>
@@ -23,28 +26,14 @@
     </ul>
   </div>
 
-
+  <!-- Contenedor del contenido dinámico -->
   <div class="content-container">
-    <div id="fiscal" class="content">
-      <h3>Temas Fiscales</h3>
-      <p>Aquí puedes incluir temas fiscales relevantes.</p>
-    </div>
-    <div id="financiero" class="content">
-      <h3>Temas Financieros</h3>
-      <p>Aquí puedes incluir temas financieros relevantes.</p>
-    </div>
-    <div id="contable" class="content">
-      <h3>Temas Contables</h3>
-      <p>Aquí puedes incluir temas contables relevantes.</p>
-    </div>
-    <div id="leyes" class="content">
-      <h3>Leyes y Normativas</h3>
-      <input type="file" id="file-upload" />
-      <button onclick="loadPDF()">Cargar PDF</button>
-      <iframe id="pdf-viewer" src="" style="display:none;"></iframe>
+    <div id="content-loader" class="content">
+      <p>Selecciona una sección del menú para ver el contenido.</p>
     </div>
   </div>
 
+  <!-- Script principal -->
   <script src="script.js"></script>
 </body>
 

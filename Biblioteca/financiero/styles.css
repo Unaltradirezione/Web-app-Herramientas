@@ -1,0 +1,10 @@
+h3 {
+    color: darkgreen;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #cfe2ff;
+    cursor: pointer;
+}
