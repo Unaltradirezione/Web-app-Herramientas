@@ -41,7 +41,7 @@ body.green-mode .tema {
   color: #cdeac0;
 }
 
-/* --- Botón desplegable --- */
+/* --- Botón desplegable de tema principal --- */
 .tema-btn {
   width: 100%;
   padding: 12px 16px;
@@ -91,6 +91,64 @@ body.dark-mode .contenido {
 
 body.green-mode .contenido {
   border-top-color: #0b3a21;
+}
+
+/* --- Subtema contenedor --- */
+.subtema {
+  margin-top: 10px;
+  border-left: 4px solid #ccc;
+  border-radius: 4px;
+  padding-left: 8px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .subtema {
+  background-color: #2b2b2b;
+  border-left-color: #666;
+}
+
+body.green-mode .subtema {
+  background-color: #224033;
+  border-left-color: #00a362;
+}
+
+/* --- Botón de subtema (casos) --- */
+.subtema-btn {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #6c757d;
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 4px;
+  transition: background-color 0.3s;
+}
+
+.subtema-btn:hover {
+  background-color: #5a6268;
+}
+
+body.dark-mode .subtema-btn {
+  background-color: #495057;
+  color: #eaeaea;
+}
+
+body.dark-mode .subtema-btn:hover {
+  background-color: #343a40;
+}
+
+body.green-mode .subtema-btn {
+  background-color: #00a362;
+  color: #1b3a2b;
+}
+
+body.green-mode .subtema-btn:hover {
+  background-color: #008f54;
 }
 
 /* --- Títulos dentro de contenido --- */

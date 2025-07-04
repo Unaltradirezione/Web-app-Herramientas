@@ -1,15 +1,22 @@
-// Mostrar u ocultar el contenido del tema
+// Mostrar u ocultar el contenido del tema y subtemas
 document.addEventListener('DOMContentLoaded', () => {
   ordenarTemasAlfabeticamente(); // Ordenar al iniciar
 
-  const botones = document.querySelectorAll('.tema-btn');
-  botones.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const contenido = btn.nextElementSibling;
-      contenido.style.display = contenido.style.display === 'block' ? 'none' : 'block';
-    });
+  // Asignar toggle a todos los botones principales y subtemas
+  document.querySelectorAll('.tema-btn, .subtema-btn').forEach(btn => {
+    btn.addEventListener('click', () => toggleContenido(btn));
   });
 });
+
+// Función para mostrar/ocultar contenido siguiente a un botón
+function toggleContenido(btn) {
+  const contenido = btn.nextElementSibling;
+  if (contenido.style.display === "block") {
+    contenido.style.display = "none";
+  } else {
+    contenido.style.display = "block";
+  }
+}
 
 // Función para filtrar los temas desde el input
 function filtrarTemas() {

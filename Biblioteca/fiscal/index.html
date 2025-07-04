@@ -2,266 +2,225 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Temas Fiscales</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temas Fiscales</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-    <!-- Buscador -->
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Buscar tema..." onkeyup="filtrarTemas()" />
+  <!-- Buscador -->
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Buscar tema..." onkeyup="filtrarTemas()" />
+  </div>
+
+  <h3>Temas Fiscales</h3>
+  <p>Haz clic en un tema para ver más información:</p>
+
+  <!-- Contenedor de temas -->
+  <div id="temas-container">
+
+    <!-- Tema: Depreciación -->
+    <div class="tema" data-nombre="depreciacion">
+      <button class="tema-btn">Depreciación</button>
+      <div class="contenido">
+
+        <p><strong>Tabla de depreciacion por activo fijo </strong></p>
+        
+
+        <!-- Caso 1 -->
+        <div class="subtema">
+          <button class="subtema-btn">💡 Caso 1: Vehículo con base deducible de $175,000.00</button>
+          <div class="contenido">
+            <p><strong>Base deducible:</strong> $175,000.00 | <strong>Vida útil:</strong> 4 años</p>
+
+            <h4>🔹 Depreciación en línea recta</h4>
+            <table>
+              <thead><tr><th>Año</th><th>Depreciación anual</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$43,750.00</td><td>$131,250.00</td></tr>
+                <tr><td>2</td><td>$43,750.00</td><td>$87,500.00</td></tr>
+                <tr><td>3</td><td>$43,750.00</td><td>$43,750.00</td></tr>
+                <tr><td>4</td><td>$43,750.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación mensual - Línea recta</h4>
+            <table>
+              <thead><tr><th>Mes</th><th>Depreciación mensual</th><th>Acumulado</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$3,645.83</td><td>$3,645.83</td><td>$171,354.17</td></tr>
+                <tr><td>2</td><td>$3,645.83</td><td>$7,291.66</td><td>$167,708.34</td></tr>
+                <tr><td>3</td><td>$3,645.83</td><td>$10,937.49</td><td>$164,062.51</td></tr>
+                <!-- ... -->
+                <tr><td>46</td><td>$3,645.83</td><td>$167,708.18</td><td>$7,291.82</td></tr>
+                <tr><td>47</td><td>$3,645.83</td><td>$171,354.01</td><td>$3,645.99</td></tr>
+                <tr><td>48</td><td>$3,645.83</td><td>$175,000.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación por suma de dígitos</h4>
+            <p>Suma de dígitos: 4 + 3 + 2 + 1 = 10</p>
+            <table>
+              <thead><tr><th>Año</th><th>Fracción</th><th>Depreciación</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>4/10</td><td>$70,000.00</td><td>$105,000.00</td></tr>
+                <tr><td>2</td><td>3/10</td><td>$52,500.00</td><td>$52,500.00</td></tr>
+                <tr><td>3</td><td>2/10</td><td>$35,000.00</td><td>$17,500.00</td></tr>
+                <tr><td>4</td><td>1/10</td><td>$17,500.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación mensual - Suma de dígitos</h4>
+            <table>
+              <thead><tr><th>Mes</th><th>Depreciación mensual</th><th>Acumulado</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$5,833.33</td><td>$5,833.33</td><td>$169,166.67</td></tr>
+                <tr><td>2</td><td>$5,833.33</td><td>$11,666.66</td><td>$163,333.34</td></tr>
+                <tr><td>3</td><td>$5,833.33</td><td>$17,499.99</td><td>$157,500.01</td></tr>
+                <!-- ... -->
+                <tr><td>46</td><td>$1,458.33</td><td>$170,208.18</td><td>$4,791.82</td></tr>
+                <tr><td>47</td><td>$1,458.33</td><td>$171,666.51</td><td>$3,333.49</td></tr>
+                <tr><td>48</td><td>$1,458.33</td><td>$173,124.84</td><td>$1,875.16</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación doble saldo decreciente</h4>
+            <p><strong>Tasa doble:</strong> 50%</p>
+            <table>
+              <thead><tr><th>Año</th><th>Base</th><th>Depreciación</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$175,000.00</td><td>$87,500.00</td><td>$87,500.00</td></tr>
+                <tr><td>2</td><td>$87,500.00</td><td>$43,750.00</td><td>$43,750.00</td></tr>
+                <tr><td>3</td><td>$43,750.00</td><td>$21,875.00</td><td>$21,875.00</td></tr>
+                <tr><td>4</td><td>$21,875.00</td><td>$21,875.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación mensual - Doble saldo decreciente</h4>
+            <table>
+              <thead><tr><th>Mes</th><th>Depreciación mensual</th><th>Acumulado</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$7,291.67</td><td>$7,291.67</td><td>$167,708.33</td></tr>
+                <tr><td>2</td><td>$7,291.67</td><td>$14,583.34</td><td>$160,416.66</td></tr>
+                <tr><td>3</td><td>$7,291.67</td><td>$21,875.01</td><td>$153,124.99</td></tr>
+                <!-- ... -->
+                <tr><td>46</td><td>$1,183.59</td><td>$171,354.17</td><td>$3,645.83</td></tr>
+                <tr><td>47</td><td>$1,183.59</td><td>$172,537.76</td><td>$2,462.24</td></tr>
+                <tr><td>48</td><td>$1,183.59</td><td>$173,721.35</td><td>$1,278.65</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Caso 2 -->
+        <div class="subtema">
+          <button class="subtema-btn">💡 Caso 2: Activo con base deducible de $250,000.00</button>
+          <div class="contenido">
+            <p><strong>Base deducible:</strong> $250,000.00 | <strong>Vida útil:</strong> 4 años</p>
+
+            <h4>🔹 Depreciación en línea recta</h4>
+            <table>
+              <thead><tr><th>Año</th><th>Depreciación anual</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$62,500.00</td><td>$187,500.00</td></tr>
+                <tr><td>2</td><td>$62,500.00</td><td>$125,000.00</td></tr>
+                <tr><td>3</td><td>$62,500.00</td><td>$62,500.00</td></tr>
+                <tr><td>4</td><td>$62,500.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación mensual - Línea recta</h4>
+            <table>
+              <thead><tr><th>Mes</th><th>Depreciación mensual</th><th>Acumulado</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$5,208.33</td><td>$5,208.33</td><td>$244,791.67</td></tr>
+                <tr><td>2</td><td>$5,208.33</td><td>$10,416.67</td><td>$239,583.33</td></tr>
+                <tr><td>3</td><td>$5,208.33</td><td>$15,625.00</td><td>$234,375.00</td></tr>
+                <!-- ... -->
+                <tr><td>46</td><td>$5,208.33</td><td>$239,583.33</td><td>$10,416.67</td></tr>
+                <tr><td>47</td><td>$5,208.33</td><td>$244,791.67</td><td>$5,208.33</td></tr>
+                <tr><td>48</td><td>$5,208.33</td><td>$250,000.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación por suma de dígitos</h4>
+            <p>Suma de dígitos: 4 + 3 + 2 + 1 = 10</p>
+            <table>
+              <thead><tr><th>Año</th><th>Fracción</th><th>Depreciación</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>4/10</td><td>$100,000.00</td><td>$150,000.00</td></tr>
+                <tr><td>2</td><td>3/10</td><td>$75,000.00</td><td>$75,000.00</td></tr>
+                <tr><td>3</td><td>2/10</td><td>$50,000.00</td><td>$25,000.00</td></tr>
+                <tr><td>4</td><td>1/10</td><td>$25,000.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación mensual - Suma de dígitos</h4>
+            <table>
+              <thead><tr><th>Mes</th><th>Depreciación mensual</th><th>Acumulado</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$8,333.33</td><td>$8,333.33</td><td>$241,666.67</td></tr>
+                <tr><td>2</td><td>$8,333.33</td><td>$16,666.67</td><td>$233,333.33</td></tr>
+                <tr><td>3</td><td>$8,333.33</td><td>$25,000.00</td><td>$225,000.00</td></tr>
+                <!-- ... -->
+                <tr><td>46</td><td>$2,083.33</td><td>$245,833.33</td><td>$4,166.67</td></tr>
+                <tr><td>47</td><td>$2,083.33</td><td>$247,916.67</td><td>$2,083.33</td></tr>
+                <tr><td>48</td><td>$2,083.33</td><td>$250,000.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación doble saldo decreciente</h4>
+            <p><strong>Tasa doble:</strong> 50%</p>
+            <table>
+              <thead><tr><th>Año</th><th>Base</th><th>Depreciación</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$250,000.00</td><td>$125,000.00</td><td>$125,000.00</td></tr>
+                <tr><td>2</td><td>$125,000.00</td><td>$62,500.00</td><td>$62,500.00</td></tr>
+                <tr><td>3</td><td>$62,500.00</td><td>$31,250.00</td><td>$31,250.00</td></tr>
+                <tr><td>4</td><td>$31,250.00</td><td>$31,250.00</td><td>$0.00</td></tr>
+              </tbody>
+            </table>
+
+            <h4>🔹 Depreciación mensual - Doble saldo decreciente</h4>
+            <table>
+              <thead><tr><th>Mes</th><th>Depreciación mensual</th><th>Acumulado</th><th>Valor en libros</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>$10,416.67</td><td>$10,416.67</td><td>$239,583.33</td></tr>
+                <tr><td>2</td><td>$10,416.67</td><td>$20,833.33</td><td>$229,166.67</td></tr>
+                <tr><td>3</td><td>$10,416.67</td><td>$31,250.00</td><td>$218,750.00</td></tr>
+                <!-- ... -->
+                <tr><td>46</td><td>$1,302.08</td><td>$231,770.83</td><td>$18,229.17</td></tr>
+                <tr><td>47</td><td>$1,302.08</td><td>$233,072.92</td><td>$16,927.08</td></tr>
+                <tr><td>48</td><td>$1,302.08</td><td>$234,375.00</td><td>$15,625.00</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          
+          <div class="subtema">
+          <button class="subtema-btn">LISR Art 31 a 38 Seccion II de las inversiones Depreciacion</button>
+          <div class="contenido">
+                 <iframe src="depreciacion.html" width="100%" height="500px" title="Fundamento legal de la depreciacion"></iframe>
+         
+
+        </div>
+
+      </div>
     </div>
 
-    <h3>Temas Fiscales</h3>
-    <p>Haz clic en un tema para ver más información:</p>
-
-    <!-- Contenedor de temas -->
-    <div id="temas-container">
-
-        <!-- Tema: Depreciación -->
-        <div class="tema" data-nombre="depreciacion">
-            <button class="tema-btn" onclick="toggleContenido(this)">Depreciación</button>
-            <div class="contenido">
-                <h4>🔹 1. Depreciación en línea recta (método lineal)</h4>
-                <p>Este método reparte la depreciación en partes iguales durante los años de vida útil.</p>
-                <p><strong>Fórmula:</strong></p>
-                <pre>Depreciación anual = (Valor del activo − Valor residual) / Vida útil</pre>
-                <p><strong>Ejemplo:</strong></p>
-                <pre>
-                    Valor del activo: $100,000
-                    Valor residual: $10,000 (valor al final de la vida útil)
-                    Vida útil: 5 años
-                    Base depreciable: $100,000 - $10,000 = $90,000
-                    Depreciación anual = (90,000 − 0) / 5 = 18,000                  
-                </pre>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Año</th>
-                            <th>Depreciación anual</th>
-                            <th>Valor en libros</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>$18,000</td>
-                            <td>$82,000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>$18,000</td>
-                            <td>$64,000</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>$18,000</td>
-                            <td>$46,000</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>$18,000</td>
-                            <td>$28,000</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>$18,000</td>
-                            <td>$10,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>🔹 2. Depreciación por suma de dígitos de los años (acelerada)</h4>
-                <p>Primero calculamos la suma de dígitos: 5 + 4 + 3 + 2 + 1 = 15</p>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Año</th>
-                            <th>Fracción</th>
-                            <th>Depreciación</th>
-                            <th>Valor en libros</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>5/15</td>
-                            <td>$30,000</td>
-                            <td>$70,000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>4/15</td>
-                            <td>$24,000</td>
-                            <td>$46,000</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>3/15</td>
-                            <td>$18,000</td>
-                            <td>$28,000</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>2/15</td>
-                            <td>$12,000</td>
-                            <td>$16,000</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>1/15</td>
-                            <td>$6,000</td>
-                            <td>$10,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>🔹 3. Depreciación decreciente (doble saldo decreciente)</h4>
-                <p>Se aplica un porcentaje doble al método lineal sobre el valor en libros inicial.</p>
-                <p><strong>Tasa lineal:</strong> 1 / 5 = 20% → <strong>Tasa doble:</strong> 40%</p>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Año</th>
-                            <th>Valor inicial</th>
-                            <th>Depreciación (40%)</th>
-                            <th>Valor en libros</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>$100,000</td>
-                            <td>$40,000</td>
-                            <td>$60,000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>$60,000</td>
-                            <td>$24,000</td>
-                            <td>$36,000</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>$36,000</td>
-                            <td>$14,400</td>
-                            <td>$21,600</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>$21,600</td>
-                            <td>$8,640</td>
-                            <td>$12,960</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>$12,960</td>
-                            <td>$2,960*</td>
-                            <td>$10,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><em>*Se ajusta en el último año para que el valor en libros no baje del valor residual
-                        ($10,000).</em></p>
-
-                <h4>🔹 4. Depreciación por unidades de producción</h4>
-                <p>Este método depende del uso real del activo (horas, unidades, km, etc.).</p>
-                <p><strong>Capacidad total:</strong> 100,000 unidades | <strong>Valor depreciable:</strong> $90,000</p>
-                <p><strong>Tasa por unidad:</strong> $90,000 / 100,000 = $0.90</p>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Año</th>
-                            <th>Unidades producidas</th>
-                            <th>Depreciación</th>
-                            <th>Valor en libros</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>30,000</td>
-                            <td>$27,000</td>
-                            <td>$73,000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>25,000</td>
-                            <td>$22,500</td>
-                            <td>$50,500</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>20,000</td>
-                            <td>$18,000</td>
-                            <td>$32,500</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>15,000</td>
-                            <td>$13,500</td>
-                            <td>$19,000</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>10,000</td>
-                            <td>$9,000</td>
-                            <td>$10,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Imagen dentro del contenido -->
-                <img src="https://via.placeholder.com/300x150?text=Depreciacion" alt="Imagen depreciación" />
-            </div>
-        </div>
-
-        <!-- Tema: IVA -->
-        <div class="tema" data-nombre="----">
-            <button class="tema-btn">---</button>
-            <div class="contenido">
-                <p>---</p>
-                <img src="https://via.placeholder.com/300x150?text=IVA" alt="Imagen IVA">
-            </div>
-        </div>
-
-        <!-- Tema: Multa -->
-        <div class="tema" data-nombre="---">
-            <button class="tema-btn">-----</button>
-            <div class="contenido">
-                <p></p>
-                <img src="https://via.placeholder.com/300x150?text=Multa" alt="Imagen multa">
-            </div>
-        </div>
-
-        <!-- Tema: ISR -->
-        <div class="tema" data-nombre="----">
-            <button class="tema-btn">----</button>
-            <div class="contenido">
-
-                <img src="https://via.placeholder.com/300x150?text=ISR" alt="Imagen ISR">
-            </div>
-        </div>
-
-        <!-- Agrega más temas aquí -->
-        <div class="tema" data-nombre="nuevo-tema">
-            <button class="tema-btn">----</button>
-            <div class="contenido">
-                <p></p>
-                <img src="https://via.placeholder.com/300x150?text=Nuevo+Tema" alt="Imagen del tema">
-            </div>
-        </div>
-
+    <!-- Otros temas de ejemplo -->
+    <div class="tema" data-nombre="otros">
+      <button class="tema-btn">Otros</button>
+      <div class="contenido">
+        <p>Contenido adicional...</p>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
